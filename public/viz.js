@@ -26,13 +26,13 @@ var year = [2013, 2014];
 var options = {
         width: 700,
         height: 400,
-	title: 'Session Hours Provided by University of Portland Librarians',
+	title: 'Confidence of students per where research is started',
         hAxis: {
-            title: 'Month',
+            title: 'Research Start',
             gridlines: {count: 12}
         },
         vAxis: {
-            title: 'People Hours'
+            title: 'Confidence'
         },
 	legend: { 
 	    position: 'none' 

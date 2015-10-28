@@ -47,7 +47,7 @@ librs.ui = function() {
 
 		var button = document.getElementById('about-btn');
 		// From this point forward, when the button is clicked, the
-		// toggle function shall be invoked.
+		// toggle function shall be invoked.z
 		button.onclick = toggle;
 
 	};
