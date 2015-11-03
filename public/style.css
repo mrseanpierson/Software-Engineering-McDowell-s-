@@ -61,9 +61,38 @@ div#header p{
 /*GRAPH THINGS*/
 div#graphbody{
 	margin: auto;
-    width: 80%;
+    width: 95%;
     padding: 10px;
 	background-color: green;
+	height: 500px;
+}
+
+div#graph{
+	min-width:720px;
+	width:auto;
+    float:left;
+    background-color:orange;
+    margin:0 10px;
+	padding: 10px;
+}
+
+div#dropbown{
+	padding: 10px;
+	background-color: red;
+}
+
+div#ex0{
+	padding: 10px;
+	background-color: yellow;
+}
+
+div#text{
+	
+    margin-left:10px;
+    width:auto;
+    overflow:hidden;
+	background-color:pink;
+	padding: 10px;
 }
 
 /*FOOTER THINGS*/
