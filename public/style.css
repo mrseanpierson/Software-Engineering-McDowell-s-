@@ -75,12 +75,11 @@ div#graph{
 	padding: 10px;
 }
 
-div#dropdown{
-	margin:auto;
+div#selection{
 	width:auto;
-	text-align:center;
+	text-align:left; /*When centered, the dropdown is not centered with the button*/
 	padding: 10px;
-	background-color: red;
+	background-color: yellow;
 }
 
 /*
