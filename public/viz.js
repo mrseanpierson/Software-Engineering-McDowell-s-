@@ -69,12 +69,14 @@ function vizInit() {
 // in the html file
 chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 
+var query = "SELECT major, start, confidence FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX"
 var opts = {sendMethod: 'auto'};
-var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/data?docid=1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX#rows:id=1', opts);
-
+var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
+//#rows:id=1
 
 // Send the query and handle the response by logging the data
-// to the console.                                                                
+// to the console.
+queryObj.setQuery(query);                                                                
 queryObj.send(function(e) {
        
 	data = e.getDataTable();
