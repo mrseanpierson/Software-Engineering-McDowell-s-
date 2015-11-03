@@ -75,19 +75,23 @@ div#graph{
 	width:auto;
     float:left;
     background-color:orange;
-    margin:0 10px;
 	padding: 10px;
 }
 
-div#dropbown{
+div#dropdown{
+	margin:auto;
+	width:auto;
+	text-align:center;
 	padding: 10px;
 	background-color: red;
 }
 
+/*
 div#ex0{
 	padding: 10px;
 	background-color: yellow;
 }
+*/
 
 div#text{
 	
