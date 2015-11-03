@@ -18,6 +18,16 @@ google.load('visualization', '1', {packages: ['corechart']});
 //when the page is done loading, call 'drawChart'
 google.setOnLoadCallback(vizInit);
 //variables from step 5
+var majorSet = {
+    business: 1,
+    humanities: 2,
+    arts: 3,
+    bio_chem: 4,
+    engineering: 5, 
+    health_prof: 6,
+    social_sciences: 7,
+    education: 8
+};
 var data;
 var views = {};
 var totals = {};
@@ -43,14 +53,14 @@ var options = {
         },
     };
     
-function vizController(thisYear) {
+function vizController(selectedMajor) {
 
-	if(views[thisYear] === undefined){
-		views[thisYear] = new google.visualization.DataView(data);
+	if(views[selectedMajor] === undefined){
+		views[selectedMajor] = new google.visualization.DataView(data);
 		console.log(data);
-		views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 2, value: thisYear}]));
-		views[thisYear].setColumns([0, 3]);
-		chart.draw(views[thisYear].toDataTable(), options);
+		views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 2, value: selectedMajor}]));
+		views[selectedMajor].setColumns([0, 3]);
+		chart.draw(views[selectedMajor].toDataTable(), options);
 	}
 }
 
@@ -63,10 +73,10 @@ chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 // 9/19/2015 Corrected typo
 // Make the initial query to get the whole Fusion table. The Fusion
 // table’s ID is listed ingit o red.                                                            
-var query = "SELECT Month, Year, AY, Sessions FROM 1P23PE35fnBA8V9Bf4u2C3jqqwr-O0i-s8pjrSEjD";
+var query = "SELECT * FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX";
 
 var opts = {sendMethod: 'auto'};
-var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
+var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/data?docid=1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX#rows:id=1', opts);
 
 
 // Send the query and handle the response by logging the data
@@ -83,18 +93,18 @@ queryObj.send(function(e) {
             // rows that have 2013-2014 for the value.                                                                 
 
             // First, get the textualized range of the year.                                                           
-            var thisYear = "" + year[0] + "-" + year[1];
+            var selectedMajor = "" + year[0] + "-" + year[1];
 
             // Next, create the object and get the rows 
-// corresponding to "thisYear".                                   
-            views[thisYear] = new google.visualization.DataView(data);
+// corresponding to "selectedMajor".                                   
+            views[selectedMajor] = new google.visualization.DataView(data);
            
-views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 2, value: thisYear}]));
+views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: majorSet.business}]));
 
             // Get a subset of the columns.                                                                            
-            views[thisYear].setColumns([0, 3]);
+            views[selectedMajor].setColumns([1, 2]);
 
-            // Draw the chart for the initial academic year.                                                           
-            chart.draw(views[thisYear].toDataTable(), options);
+            // Draw the chart for the initial selected major                                                          
+            chart.draw(views[selectedMajor].toDataTable(), options);
 });
 }
