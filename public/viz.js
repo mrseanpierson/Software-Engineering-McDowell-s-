@@ -97,7 +97,7 @@ queryObj.send(function(e) {
 
             // First, get the textualized range of the year.                                                           
 
-            var selectedMajor = //Pull from the button!;
+            var selectedMajor = ;
 
             // Next, create the object and get the rows 
 // corresponding to "selectedMajor".                                   
