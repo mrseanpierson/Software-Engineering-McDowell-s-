@@ -75,7 +75,6 @@ var queryObj = new google.visualization.Query('https://www.google.com/fusiontabl
 
 // Send the query and handle the response by logging the data
 // to the console.                                                                
-queryObj.setQuery(query);
 queryObj.send(function(e) {
        
 	data = e.getDataTable();
