@@ -47,7 +47,11 @@ librs.ui = function() {
 
 		var button = document.getElementById('about-btn');
 		// From this point forward, when the button is clicked, the
+<<<<<<< HEAD
 		// toggle function shall be invoked.z
+=======
+		// toggle function shall be invoked.
+>>>>>>> Tyler
 		button.onclick = toggle;
 
 	};

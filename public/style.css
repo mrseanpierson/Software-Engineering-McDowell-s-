@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 body {
 	background-color: tan;
+=======
+@charset "utf-8";
+.sans {
+	font-family: Sans-Serif;
+	color: #005CB9;
+}
+body {
+	background-color:rgb(229,227,223);
+>>>>>>> Tyler
 	margin: 0px;
 	padding 0px;
 	
 }
+<<<<<<< HEAD
 hr{
 	align: center;
 	width: 90%;
@@ -72,3 +83,33 @@ div#footer{
 	padding: 30px;
 	background-color: red;
 }
+=======
+div#header{
+	padding: 30px;
+	background-image: url("library.jpg");
+	border-bottom : 2px solid orange;
+	color: white;
+}
+div#header .title {
+	font-weight: bold;
+	font-size: 200%;
+}
+div#header p{
+	display: inline-block;
+}
+div#footer{
+	border 2px solid #666;
+	padding: 30px;
+}
+div#footer p{
+	color: #666;
+}
+div#about {
+	opacity: 0;
+	transition: all 2s linear;
+}
+div#about.show {
+    opacity: 1;
+}
+
+>>>>>>> Tyler
