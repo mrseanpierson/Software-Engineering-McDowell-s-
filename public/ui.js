@@ -14,25 +14,12 @@ librs.ui = {};
 librs.ui = function() {
 
 	var fetch = function() {
-		var el = document.getElementById("year");
+		var el = document.getElementById("major");
 
 		console.log(el.value);
 		vizController(el.value);
 
 	};
-
-	var toggle = function() {
-
-		var el = document.getElementById("about");
-
-		if (hasClass(el, 'show')) {
-			librs.utility.removeClass(el, 'show');
-		} else {
-			librs.utility.addClass(el, 'show');
-		}
-
-	};
-
 	var initialize = function() {
 
 		console.log('Initialize!');
@@ -44,11 +31,6 @@ librs.ui = function() {
 		// From this point forward, when the button is clicked, the
 		// toggle function shall be invoked.
 		button.onclick = fetch;
-
-		var button = document.getElementById('about-btn');
-		// From this point forward, when the button is clicked, the
-		// toggle function shall be invoked.
-		button.onclick = toggle;
 
 	};
 

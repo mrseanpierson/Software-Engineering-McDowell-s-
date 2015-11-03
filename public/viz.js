@@ -72,13 +72,12 @@ function vizInit() {
 // in the html file
 chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 
-// 9/19/2015 Corrected typo
 // Make the initial query to get the whole Fusion table. The Fusion
 // table’s ID is listed ingit o red.                                                            
 var query = "SELECT * FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX";
 
 var opts = {sendMethod: 'auto'};
-var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/data?docid=1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX#rows:id=1', opts);
+var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
 
 
 
@@ -97,13 +96,13 @@ queryObj.send(function(e) {
 
             // First, get the textualized range of the year.                                                           
 
-            var selectedMajor = ;
+            var selectedMajor = majorSet.business;
 
             // Next, create the object and get the rows 
 // corresponding to "selectedMajor".                                   
             views[selectedMajor] = new google.visualization.DataView(data);
            
-views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: majorSet.business}]));
+views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: selectedMajor}]));
 
             // Get a subset of the columns.                                                                            
             views[selectedMajor].setColumns([1, 2]);
