@@ -21,6 +21,7 @@ google.setOnLoadCallback(vizInit);
 var data;
 var views = {};
 var totals = {};
+
 var majorSet = {
 		business: 1,
 		humanities_history: 2,
@@ -31,6 +32,7 @@ var majorSet = {
 		social_sciences: 7,
 		education: 8
 	};
+var selectedMajor = majorSet.business;
 var chart;
 var options = {
         width: 700,
@@ -85,7 +87,7 @@ queryObj.send(function(e) {
     console.log(data);
     
     //for now this will pull the data from the button.                                                           
-    var selectedMajor = document.getElementById('major').value;
+    //var selectedMajor = document.getElementById('major').value;
 
     // Next, create the object and get the rows 
 	// corresponding to "selectedMajor".                                   
