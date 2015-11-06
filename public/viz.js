@@ -71,15 +71,16 @@ function vizInit() {
 // in the html file
 chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 
-var query = "SELECT major, confidence FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX"
+//this gets the entire table
+var query = "SELECT major, start, confidence FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX"
 var opts = {sendMethod: 'auto'};
 var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
-//#rows:id=1
+	//#rows:id=1
 
-// Send the query and handle the response by logging the data
-// to the console.
-queryObj.setQuery(query);                                                                
-queryObj.send(function(e) {
+	// Send the query and handle the response by logging the data
+	// to the console.
+	queryObj.setQuery(query);                                                                
+	queryObj.send(function(e) {
        
 	data = e.getDataTable();
 
@@ -95,14 +96,14 @@ queryObj.send(function(e) {
 	// corresponding to "selectedMajor".                                   
     views[selectedMajor] = new google.visualization.DataView(data);
    	//What i believe we should do is the following:
-   	//1. get all rows of selectedMajor in a new DataView
-   	//2. get all rows for each start location from 1.'s new DataView in a new DataView
+   	//1. get all rows of selectedMajor 
+   	//2. get all rows for each start location from 1.'s 
     //3. add up all the values from 2.'s new DataView while counting how many there are
     //	 then divide the sum by the count number
-	var rowsOfSelectedMajor = views[selectedMajor].getFilteredRows([{column: 0, value: majorSet.selectedMajor}]);
-	var rowsOfSelectedMajorView = new google.visualization.DataView(rowsOfSelectedMajor);
-	var encyloRows = rowsOfSelectedMajorView.getFilteredRows([{column: 2, value: 1}]);
-	
+    //somthing along the lines of this, but for each one
+    //im unsure of if we have to do a new query for each of these.
+	var rowsOfSelectedMajorEncyclo = views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: selectedMajor}, {column: 1, value: 1}]));
+
     // Get a subset of the columns.                                                                            
     views[selectedMajor].setColumns([1]);
 
