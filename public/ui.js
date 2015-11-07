@@ -20,6 +20,7 @@ librs.ui = function() {
 		vizController(el.value);
 
 	};
+	
 	var initialize = function() {
 
 		console.log('Initialize!');
