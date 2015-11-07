@@ -1,49 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-    <title>The Simplest Thing Possible</title>
+    <title>McDowell's</title>
     
     <script type="text/javascript" src="utility.js"></script>
     <script type="text/javascript"src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="viz.js" ></script>
-   
-	    
+
+	<!--Added for dropdown menu-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!--ref links from the original assignment-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>    
 
 <body>
 <div class="container">
   <div id="wrapper">
 	
+	<!-- BANNER -->
 	<div id="header">
-		<p class ="title">The Simplest Thing Possible:</p>
-		<p>Visualizing the number of session hours offered by the UP
-			librarians to the university community.</p>
+		<!-- Seriously, we can change the name of this -->
+		<p class ="title">McDowell's Graphical Result Analyzer Parser/Helper</p>
+		<p>Helping you see what needs to be seen</p>
 	</div>
-
-	<form class="form-inline">
- 	 <div class="form-group">       
-    	<label for="year">Year</label>
-    	<input type="text" class="form-control" id="year" placeholder="2013-2014">
- 	 </div>   
-	
- 	  <button type="button" id="submit-btn" class="btn btn-default">Submit</button>
- 	   
-	</form>
-
-
-  	<div id="ex0"></div>
-  	<div id="footer"><p>Author: Sean Pierson</p></div>
-  	
-  	<button type="button" id="about-btn" class="btn btn-default">About</button>
-   <div id="about">Lorem ipsum dolor sit amet, consectetur ….</div>
+	<!-- END BANNER -->
+	<hr>
+	<!-- MAIN GRAPH -->
+	<div id="graphbody">
+		<div id ="graph">
+			<div id ="selection">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" id="major" type="button" data-toggle="dropdown">Select Major
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 1</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 2</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 3</a></li>
+					<li role="presentation" class="divider"></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">All Majors</a></li>    
+					</ul>
+					<button type="button" id="submit-btn" class="btn btn-default">Go!</button>
+				</div>
+			</div>
+			<div id="ex0"></div>
+		</div>
+		<div id ="text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sem justo, ultrices nec vulputate tempus,
+			rhoncus et metus. Aenean aliquam auctor lacus, id lacinia eros. Duis vel ultricies felis. Aliquam nec mi ligula.
+			Proin libero nisl, iaculis in volutpat ac, dapibus a quam. Curabitur luctus, odio porttitor luctus hendrerit, urna lacus posuere enim,
+			id lacinia diam felis egestas dolor. Phasellus tempus a nulla vel ultricies. Duis eget neque ac lorem finibus bibendum. Nam auctor velit
+			id tortor lacinia, eu accumsan magna mollis. Sed vehicula dui mi, sit amet tempus quam ornare ut. Donec non porta augue. Maecenas 
+			sollicitudin elit non tempor pretium.</p>
+		</div>
+	</div>
+	<!-- END MAIN GRAPH -->
+	<hr>
+	<!-- FOOTER CONTENT -->
+  	<div id="footer">
+	</div>
+	<!-- END FOOTER CONTENT -->
    
- </div>
- 
-  <script type="text/javascript" src="ui.js"></script>
+</div>
+
+<script type="text/javascript" src="ui.js"></script>
   
 </body>
 </html>
