@@ -41,10 +41,15 @@ var options = {
         height: 400,
 		title: 'Confidence of students based on where research is started',
         hAxis: {
-            title: 'Research Start'
-        },
+        	title: 'Research Start Location', 
+		},
         vAxis: {
-            title: 'Average Confidence'
+            title: 'Average Confidence',
+            viewWindow: {
+		        min: 0,
+		        max: 4
+		    },
+		    ticks: [1,2,3,4] // display labels every 25
         },
 		legend: { 
 	    	position: 'none' 
@@ -112,13 +117,13 @@ function getData() {
 		for (var i = 0; i < correspondingAverages.length; i++) {
 			var startValue = parseInt(aggTable.getValue(correspondingAverages[i], 1));
 			
-			var s = "startValue at "+ i + " = " + startValue;
-			console.log(s);
+			// var s = "startValue at "+ i + " = " + startValue;
+			// console.log(s);
 
 			switch(startValue){
 		  	case 1:
 		  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Encyclopedias');
-		  		console.log('renamed encylos');
+		  		
 		  		break;
 		  	case 2:
 		  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Articles');
