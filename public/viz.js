@@ -117,7 +117,7 @@ var queryObj = new google.visualization.Query('https://www.google.com/fusiontabl
 
 	var correspondingAverages = aggTable.getFilteredRows([{column: 0, value: selectedMajor}]);
 	for (var i = 0; i < correspondingAverages.length; i++) {
-		var startValue = aggTable.getValue(correspondingAverages[i], 1);
+		var startValue = parseInt(aggTable.getValue(correspondingAverages[i], 1));
 		switch(startValue){
 	  	case 1:
 	  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Encyclopedias');
@@ -141,7 +141,7 @@ var queryObj = new google.visualization.Query('https://www.google.com/fusiontabl
 	}
 
 	// Log the raw response to the console.
-    //console.log(ourData);
+    console.log(aggTable.getValue(correspondingAverages[1], 1));
     
     //for now this will pull the data from the button.                                                           
     //var selectedMajor = document.getElementById('major').value;
