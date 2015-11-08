@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "utf-8";
 .sans {
 	font-family: Sans-Serif;
@@ -7,6 +8,14 @@ body {
 	background-color:rgb(229,227,223);
 }
 
+=======
+body {
+	background-color: tan;
+	margin: 0px;
+	padding 0px;
+	
+}
+>>>>>>> Sean
 hr{
 	align: center;
 	width: 90%;
@@ -78,12 +87,11 @@ div#graph{
 	padding: 10px;
 }
 
-div#dropdown{
-	margin:auto;
+div#selection{
 	width:auto;
-	text-align:center;
+	text-align:left; /*When centered, the dropdown is not centered with the button*/
 	padding: 10px;
-	background-color: red;
+	background-color: yellow;
 }
 
 /*

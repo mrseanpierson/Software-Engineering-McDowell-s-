@@ -15,18 +15,17 @@ librs.ui = function() {
 
 	var fetch = function() {
 		var el = document.getElementById("major");
-
-		console.log(el.value);
-		vizController(el.value);
+		console.log(btn.value);
+		vizController(btn.value);
 
 	};
-	
+
+
 	var initialize = function() {
 
 		console.log('Initialize!');
 
-		// Grab the 'About' button element, identified by the
-		// 'about-btn' id.
+
 
 		var button = document.getElementById('major');
 		// From this point forward, when the button is clicked, the
