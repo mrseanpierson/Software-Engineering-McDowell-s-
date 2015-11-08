@@ -28,7 +28,7 @@ librs.ui = function() {
 		// Grab the 'About' button element, identified by the
 		// 'about-btn' id.
 
-		var button = document.getElementById('submit-btn');
+		var button = document.getElementById('major');
 		// From this point forward, when the button is clicked, the
 		// toggle function shall be invoked.
 		button.onclick = fetch;

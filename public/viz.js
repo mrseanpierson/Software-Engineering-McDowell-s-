@@ -29,6 +29,16 @@ var majorSet = {
     education: 8
 };
 
+var locationStarted = {
+    Encyclopedias: 1,
+    "Article Databases": 2,
+    Catalog: 3,
+    "Class Materials": 4,
+    Google: 5,
+    Wikipedia: 6,
+    Other: 7
+};
+
 var data;
 var views = {};
 var totals = {};
@@ -37,13 +47,13 @@ var year = [2013, 2014];
 var options = {
         width: 700,
         height: 400,
-	title: 'Session Hours Provided by University of Portland Librarians',
+	title: 'Confidence In Writing A Thesis by Where Research Was Begun',
         hAxis: {
-            title: 'Month',
-            gridlines: {count: 12}
+            title: 'Location Started'
+            //gridlines: {count: }
         },
         vAxis: {
-            title: 'People Hours'
+            title: 'Average Confidence'
         },
 	legend: { 
 	    position: 'none' 
@@ -68,47 +78,45 @@ function vizController(selectedMajor) {
 
 function vizInit() {
 
-// Create a new viz object using the google API -- specifically,                                                                                                         
-// in the html file
-chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
+    // Create a new viz object using the google API -- specifically,                                                                                                         
+    // in the html file
+    chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 
-// Make the initial query to get the whole Fusion table. The Fusion
-// table’s ID is listed ingit o red.                                                            
-var query = "SELECT * FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX";
+    // Make the initial query to get the whole Fusion table. The Fusion
+    // table’s ID is listed ingit o red.                                                            
+    var query = "SELECT * FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX";
 
-var opts = {sendMethod: 'auto'};
-var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
+    var opts = {sendMethod: 'auto'};
+    var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
 
 
 
-// Send the query and handle the response by logging the data
-// to the console.                                                                
-queryObj.setQuery(query);
-queryObj.send(function(e) {
-       
-	data = e.getDataTable();
-
-	// Log the raw response to the console.
-    console.log(data);
-    // Create a view for academic year 2013-2014 that                                                          
-            // is the first two columns of the data, just the                                                          
-            // rows that have 2013-2014 for the value.                                                                 
-
-            // First, get the textualized range of the year.                                                           
-
-            var selectedMajor = majorSet.business;
-
-            // Next, create the object and get the rows 
-// corresponding to "selectedMajor".                                   
-            views[selectedMajor] = new google.visualization.DataView(data);
+    // Send the query and handle the response by logging the data
+    // to the console.                                                                
+    queryObj.setQuery(query);
+    queryObj.send(function(e) {
            
-views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: selectedMajor}]));
+    	data = e.getDataTable();
 
-            // Get a subset of the columns.                                                                            
-            views[selectedMajor].setColumns([1, 2]);
+    	// Log the raw response to the console.
+        console.log(data);
+        // Create a view for acad                                                                 
 
-            // Draw the chart for the initial selected major                                                          
-            chart.draw(views[selectedMajor].toDataTable(), options);
+                // First, get the textualized major                                                          
 
-});
+        var selectedMajor = majorSet.business;
+
+        // Next, create the object and get the rows 
+        // corresponding to "selectedMajor".                                   
+        views[selectedMajor] = new google.visualization.DataView(data);
+               
+        views[selectedMajor].setRows(views[selectedMajor].getFilteredRows([{column: 0, value: selectedMajor}]));
+
+        // Get a subset of the columns.                                                                            
+        views[selectedMajor].setColumns([1, 2]);
+
+       // Draw the chart for the initial selected major                                                          
+        chart.draw(views[selectedMajor].toDataTable(), options);
+
+    });
 }
