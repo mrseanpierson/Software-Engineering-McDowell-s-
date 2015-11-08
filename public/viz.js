@@ -31,12 +31,11 @@ var majorSet = {
 
 var locationStarted = {
     Encyclopedias: 1,
-    "Article Databases": 2,
+    Article Databases: 2,
     Catalog: 3,
-    "Class Materials": 4,
+    ClassMaterials: 4,
     Google: 5,
-    Wikipedia: 6,
-    Other: 7
+    Wikipedia: 6
 };
 
 var data;
