@@ -33,20 +33,22 @@
 	<hr>
 	<!-- MAIN GRAPH -->
 	<div id="graphbody">
-		
-		<div class="dropdown">
-			<button class="btn btn-primary dropdown-toggle" id="major" type="button" data-toggle="dropdown">Select Major
-			<span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 1</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 2</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Major 3</a></li>
-			<li role="presentation" class="divider"></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">All Majors</a></li>    
-			</ul>
+		<div id ="graph">
+			<div id ="selection">
+				<select id="major">
+				  <option value="1">Business</option>
+				  <option value="2">History and Humanities</option>
+				  <option value="3">Arts</option>
+				  <option value="4">Biology and Chemistry</option>
+				  <option value="5">Engineering and Math</option>
+				  <option value="6">Health Sciences</option>
+				  <option value="7">Behavioral Sciences</option>
+				  <option value="8">Education</option>
+				</select>
+				<button type="button" id="submit-btn" class="btn btn-default">Go!</button>
+			</div>
+			<div id="ex0"></div>
 		</div>
-
-		<div id="ex0"></div>
 	</div>
 	<!-- END MAIN GRAPH -->
 	<hr>

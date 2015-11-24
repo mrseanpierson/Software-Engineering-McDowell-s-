@@ -14,20 +14,16 @@ librs.ui = {};
 librs.ui = function() {
 
 	var fetch = function() {
-		var el = document.getElementById("major");
-		console.log(btn.value);
-		vizController(btn.value);
-
+		var dropDown = document.getElementById("major");
+		//can have .text at the end
+		var selected = dropDown.options[dropDown.selectedIndex].value;
+		console.log(selected);
+		vizController(selected);
 	};
 
 
 	var initialize = function() {
-
-		console.log('Initialize!');
-
-
-
-		var button = document.getElementById('major');
+		var button = document.getElementById('submit-btn');
 		// From this point forward, when the button is clicked, the
 		// toggle function shall be invoked.
 		button.onclick = fetch;

@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-@charset "utf-8";
-.sans {
-	font-family: Sans-Serif;
-	color: #005CB9;
-}
-body {
-	background-color:rgb(229,227,223);
-}
-
-=======
 body {
 	background-color: tan;
 	margin: 0px;
 	padding 0px;
 	
 }
->>>>>>> Sean
 hr{
 	align: center;
 	width: 90%;
