@@ -114,34 +114,7 @@ function getData() {
 		//representation of 'start' column with its corresponding string so that
 		//the x-axis is properly labelled when it is graphed.
 		var correspondingAverages = aggTable.getFilteredRows([{column: 0, value: selectedMajor}]);
-		for (var i = 0; i < correspondingAverages.length; i++) {
-			var startValue = parseInt(aggTable.getValue(correspondingAverages[i], 1));
-			
-			// var s = "startValue at "+ i + " = " + startValue;
-			// console.log(s);
-
-			switch(startValue){
-		  	case 1:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Encyclopedias');
-		  		
-		  		break;
-		  	case 2:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Articles');
-		  		break;
-		  	case 3:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Library-Catalogs');
-		  		break;
-		  	case 4:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Class Materials');
-		  		break;
-		  	case 5:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Web-Google');
-		  		break;
-		  	case 6:
-		  		aggTable.setCell(correspondingAverages[i], 1, 'Web-Wikipedia');
-		  		break;
-		  }
-		}
+		setColumnNames(correspondingAverages, aggTable);
 	    
 	    //for now this will pull the data from the button.                                                           
 	    //var selectedMajor = document.getElementById('major').value;
