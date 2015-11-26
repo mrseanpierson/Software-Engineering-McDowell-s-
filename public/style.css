@@ -1,5 +1,5 @@
 body {
-	background-color: tan;
+	background-color: #D4D4D4;
 	margin: 0px;
 	padding 0px;
 	
@@ -11,12 +11,15 @@ hr{
 
 /*HEADER THINGS*/
 div#header{
-	width: 100%;
-	padding: 30px;
+	position:absolute;
+	width:100%;
+	left: 0;
+	top: 0;
+	padding: 20px;
 	background-image: url("banner.jpg");
 	background-position: center; 
 	color: white; /*Looks best with white*/
-	background-color: pink;
+	background-color: white;
 	
 	/*Fancy Title Effects*/
 	filter: grayscale(1);
@@ -60,35 +63,36 @@ div#header p{
 
 /*GRAPH THINGS*/
 div#graphbody{
-	margin: auto;
-    width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+    width: 760px;
     padding: 10px;
-	background-color: green;
+	/*background-color: green;*/
 	height: 500px;
 }
 
 div#graph{
 	min-width:720px;
 	width:auto;
-    float:left;
-    background-color:orange;
+    margin:auto;
+    background-color:#B0B0B0;
 	padding: 10px;
 }
 
 div#selection{
-	width:auto;
-	text-align:left; /*When centered, the dropdown is not centered with the button*/
+	width: auto;
+	text-align:center; /*When centered, the dropdown is not centered with the button*/
 	padding: 10px;
-	background-color: yellow;
+	background-color: white;
+}
+
+div#ex0{
+	background-color: white;
+	padding
 }
 
 /*
-div#ex0{
-	padding: 10px;
-	background-color: yellow;
-}
-*/
-
 div#text{
 	
     margin-left:10px;
@@ -97,10 +101,14 @@ div#text{
 	background-color:pink;
 	padding: 10px;
 }
+*/
 
 /*FOOTER THINGS*/
 div#footer{
-	border 2px solid #666;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	border: 2px solid #666;
 	padding: 30px;
-	background-color: red;
+	background-color: white;
 }
