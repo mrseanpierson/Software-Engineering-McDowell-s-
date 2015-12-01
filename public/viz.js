@@ -6,8 +6,8 @@
  * - The options for the look of the chart to be drawn.
  * - How to draw the chart.
  *
- * @author: Tanya L. Crenshaw
- * @contributor: Sean J. Pierson
+ * @author: Sean Pierson, Tyler Honsinger, Max Oakes
+ * 
  * @since: Jan 6, 2015
  */
 
