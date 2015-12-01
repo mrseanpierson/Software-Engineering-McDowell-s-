@@ -6,8 +6,8 @@
  * - The options for the look of the chart to be drawn.
  * - How to draw the chart.
  *
- * @author: Tanya L. Crenshaw
- * @contributor: Sean J. Pierson
+ * @author: Sean Pierson, Tyler Honsinger, Max Oakes
+ * 
  * @since: Jan 6, 2015
  */
 
@@ -32,7 +32,6 @@ var majorSet = {
 		education: 8
 	};
 
-	
 
 var selectedMajor;
 var chart;
@@ -42,6 +41,7 @@ var options = {
 		title: 'Confidence of students based on where research is started',
         hAxis: {
         	title: 'Research Start Location', 
+        	
 		},
         vAxis: {
             title: 'Average Confidence',
@@ -57,29 +57,53 @@ var options = {
 		animation: {
             "startup" : true,
             "duration" : 500
-        }
+        },
+        colors: ['#78909C']  
     };
     
 function vizController(buttonMajor) {
 
+	var graphBody = document.getElementById('graphbody');
+
 	selectedMajor = parseInt(buttonMajor);
-	getData();
-}
+	switch(selectedMajor){
+		case 1: 
+				options.colors = ['gray'];
+				graphBody.style.backgroundColor='gray';
+				break;
+		case 2:
+				options.colors = ['#5D4037'];
+				graphBody.style.backgroundColor='#5D4037';
+				break;
+		case 3:
+				options.colors = ['#76FF03'];
+				graphBody.style.backgroundColor='#76FF03';
+				break;
+		case 4:
+				options.colors = ['#01579B'];
+				graphBody.style.backgroundColor='#01579B';
+				break;
+		case 5:
+				options.colors = ['#E57373'];
+				graphBody.style.backgroundColor='#E57373';
+				break;
+		case 6:
+				options.colors = ['orange'];
+				graphBody.style.backgroundColor='orange';
+				break;
+		case 7:
+				options.colors = ['purple'];
+				graphBody.style.backgroundColor='purple';
+				break;
+		case 8:
+				options.colors = ['cyan'];
+				graphBody.style.backgroundColor='cyan';
+				break;		
+	}
+	manipulateData();
+} //end vizController
 
-function getData() {
-	chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
-	chart.groupWidth = 100;
-	//this gets the entire table
-	var query = "SELECT major, start, confidence FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX"
-	var opts = {sendMethod: 'auto'};
-	var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
-		//#rows:id=1
-
-		// Send the query and handle the response by logging the data
-		// to the console.
-		queryObj.setQuery(query);                                                                
-		queryObj.send(function(e) {
-	    
+function manipulateData(){
 		var countEncylo = 0;
 		var totalEnyclo = 0;
 
@@ -97,10 +121,6 @@ function getData() {
 
 		var countWiki = 0;
 		var totalWiki = 0;
-
-		ourData = e.getDataTable();
-
-		
 
 		aggTable = google.visualization.data.group(
 		  // input data
@@ -129,9 +149,26 @@ function getData() {
 
 	    // Draw the chart for the initial academic year. //had a .toDataTable() part after ]                                                          
 	    chart.draw(views[selectedMajor].toDataTable(), options);
+} //end manipulateData()
+
+function getData() {
+	chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
+	chart.groupWidth = 100;
+	//this gets the entire table
+	var query = "SELECT major, start, confidence FROM 1fxvCbqTZgT21sArvYIp6zXBQzgCmVNUSwBZtu-BX"
+	var opts = {sendMethod: 'auto'};
+	var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
+		//#rows:id=1
+
+		// Send the query and handle the response by logging the data
+		// to the console.
+		queryObj.setQuery(query);                                                                
+		queryObj.send(function(e) {
+		ourData = e.getDataTable();
+		manipulateData()
 	});
 
-}
+}//end getData()
 
 
 function vizInit() {
