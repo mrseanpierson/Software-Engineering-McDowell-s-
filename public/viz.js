@@ -38,11 +38,12 @@ var chart;
 var options = {
         width: 700,
         height: 400,
-		title: 'Confidence of students based on where research is started',
+		title: 'Confidence in writing a thesis based on where research is started',
         hAxis: {
         	title: 'Research Start Location', 
         	
 		},
+		chartArea: {top: '8%'},
         vAxis: {
             title: 'Average Confidence',
             viewWindow: {

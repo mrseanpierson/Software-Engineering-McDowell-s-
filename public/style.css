@@ -5,6 +5,7 @@ body {
 	background-color: #D4D4D4;
 	margin: 0px;
 	padding 0px;
+	overflow: hidden;
 	
 }
 hr{
@@ -87,13 +88,18 @@ div#selection{
 	width: auto;
 	text-align:center; /*When centered, the dropdown is not centered with the button*/
 	padding: 10px;
-	background-color: white;
+	background: white;
+}
+div#selection select{
+	 border: 1px solid #ccc;
+	 overflow: hidden;
 }
 
 div#ex0{
 	background-color: white;
 	padding
 }
+
 
 /*
 div#text{
@@ -113,6 +119,7 @@ div#footer{
 	text-align:center;
 	margin-top: 10px;
 	border: 2px solid #666;
-	padding: 30px;
+	padding: 1px;
 	background-color: white;
+
 }
