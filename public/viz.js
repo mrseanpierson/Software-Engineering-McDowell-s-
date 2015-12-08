@@ -76,8 +76,8 @@ function vizController(buttonMajor) {
 				graphBody.style.backgroundColor='#5D4037';
 				break;
 		case 3:
-				options.colors = ['#76FF03'];
-				graphBody.style.backgroundColor='#76FF03';
+				options.colors = ['#2E7D32'];
+				graphBody.style.backgroundColor='#2E7D32';
 				break;
 		case 4:
 				options.colors = ['#01579B'];
@@ -96,8 +96,8 @@ function vizController(buttonMajor) {
 				graphBody.style.backgroundColor='purple';
 				break;
 		case 8:
-				options.colors = ['cyan'];
-				graphBody.style.backgroundColor='cyan';
+				options.colors = ['#26C6DA'];
+				graphBody.style.backgroundColor='#26C6DA';
 				break;		
 	}
 	manipulateData();
